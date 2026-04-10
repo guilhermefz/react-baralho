@@ -9,7 +9,9 @@ function App() {
   return (
     <>
       <DeckOfCards />
-
+      <button> <a href='formulario.jsx'>Formulario</a> </button>
+      <hr></hr>
+      <button> <a href='App.jsx'>Pagina Inicial</a> </button>
       
     </>
   )

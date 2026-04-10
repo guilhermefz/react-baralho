@@ -2,12 +2,19 @@ import { useState } from "react";
 
 const Form = (props) => {
     const [inputs, setInputs] = useState({
-        image: ''
+        image: '',
+        name: '',
+        suit: ''
     })
 
     const handleInputChange = (event) => {
+        const { target } = event
+        const { name } = target
+        const { value } = target
+        
         setInputs({
-            image: event.target.value
+            ...inputs,
+            [name]: value
         })
     }
 
@@ -22,6 +29,14 @@ const Form = (props) => {
             <div>
                 <label htmlFor="image">Endereco da imagem</label>
                 <input type="text" id="image" name="image" onChange={handleInputChange} value={inputs.image}/>
+            </div>
+            <div>
+                <label htmlFor="value">Nome da carta</label>
+                <input type="text" id="value" name="value" onChange={handleInputChange} value={inputs.name}/>
+            </div>
+            <div>
+                <label htmlFor="suit">Naipe da Carta</label>
+                <input type="text" id="suit" name="suit" onChange={handleInputChange} value={inputs.suit}/>
             </div>
             <input type="submit" />
         </form>
